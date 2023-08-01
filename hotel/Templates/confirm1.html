@@ -1,0 +1,212 @@
+<html>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <!-- Compiled and minified CSS  -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+        
+        <!-- Compiled and minified JavaScript  -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Asap+Condensed:600i,700');
+
+body {
+  background: #fafafa;
+  display: flex;
+  text-transform: uppercase;
+  font-family: 'Asap Condensed', sans-serif;
+}
+
+h1 {
+  font-size: 60px;
+}
+h3 {
+  font-size: 26px;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.card {
+  position: relative;
+  margin: auto;
+  height: 350px;
+  width: 600px;
+  text-align: center;
+  background: linear-gradient(#26a69a, #00796b, #004d40);
+  border-radius: 2px;
+  box-shadow: 0 6px 12px -3px rgba(0,0,0,.3);
+  color: #fff;
+  padding: 30px;
+}
+
+.card header {
+  position: absolute;
+  top: 31px;
+  left: 0;
+  width: 100%;
+  padding: 0 10%;
+  transform: translateY(-50%);
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+}
+
+.card header > *:first-child {
+  text-align: left;
+}
+.card header > *:last-child {
+  text-align: right;
+}
+
+.logo {
+  font-size: 24px;
+  position: relative;
+}
+.logo:before,
+.logo:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  border-top: 3px solid currentColor;
+  transform: translateY(-50%);
+}
+
+.logo:before {
+  right: 158px;
+  width: 40%;
+}
+.logo:after {
+  left: 158px;
+  width: 55%;
+}
+
+.logo span {
+  /*border: solid currentColor;
+  border-width: 0 3px 3px 0;
+  position: absolute;
+  top: -22px;
+  width: 69px;
+  height: 70px;
+  left: 50%;
+  transform: translateX(-58%) rotate(58deg) skew(0deg, -30deg);*/
+  display: block;
+  position: absolute;
+  width: 100%;
+  top: calc(50% - 1px);
+}
+
+.announcement {
+  position: relative;
+  border: 3px solid currentColor;
+  border-top: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.announcement:before,
+.announcement:after {
+  content: '';
+  position: absolute;
+  top: 0px;
+  border-top: 3px solid currentColor;
+  height: 0;
+  width: 15px;
+}
+.announcement:before {
+  left: -3px;
+}
+.announcement:after {
+  right: -3px;
+}
+
+
+.inspiration {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+}
+
+
+
+
+
+
+
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+}
+
+a,
+a:visited,
+a:focus,
+a:active,
+a:link {
+  text-decoration: none;
+  outline: 0;
+}
+
+a {
+  color: currentColor;
+  transition: .2s ease-in-out;
+}
+
+h1, h2, h3, h4 {
+  margin: .15em 0;
+}
+
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+img {
+  vertical-align: middle;
+  height: auto;
+  width: 100%;
+}
+
+@media screen {
+    
+}
+</style>
+     
+
+
+
+        <div class="card">
+  <header>
+    <time
+  datetime="2018-05-15T19:00"></time>
+    <div class="logo">
+      <span>
+        <svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" viewBox="0 0 234.5 53.7"><style>.st0{fill:none;stroke:#FFFFFF;stroke-width:5;stroke-miterlimit:10;}</style><path d="M.6 1.4L116.9 52l117-50.6" class="st0"/></svg>
+      </span>Thank You</div>
+    <div class="sponsor"></div>
+  </header>
+  <div class="announcement">
+      {% for p in pay %}
+    <h2>{{p.hotel}}</h2>
+    <h3>{{p.name}}</h3>
+    <h4>to stay at theirs from</h4>
+    <h4 class="italic">{{p.arrival}} to {{p.departure}}</h4>
+    {% endfor %}
+  </div>
+</div>
+
+
+<div class="inspiration">
+  <a rel="noopener" target="_blank" href="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3794/heartland.jpg"></a>
+</div>
